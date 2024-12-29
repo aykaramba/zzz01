@@ -1,4 +1,5 @@
 
+
 (defpackage #:zzz01
   (:use #:cl #:clog #:clog-web)
   (:export start-app))
@@ -32,14 +33,14 @@
 		    (declare (ignore obj))
 		    (setf collection nil) ;; set counter to nil
 		    (setf (text notifications) " " ) ;; set notifications to nil
-		    (setf (text notifications-length)  (format nil "Length of array: ~a" (length divs))) ;; check length of array
+		    (setf (text notifications-length)  (format nil "Length of array: ~a" (length divs))) ;; display length of array
 		    (dotimes (n ndivs) ;; loop by number of checkboxes
 		      (if (checkedp (aref divs n)) ;; check of check boxes are checked in array
-			  (progn (setf collection (concatenate 'string (print collection)   " " (write-to-string n) " ")) ;; zero out notifications
-				 (setf (text notifications) collection) ;; count the number of loops a click performs
+			  (progn (setf collection (concatenate 'string (print collection)   " " (write-to-string n) " ")) ;; update visual counter
+				 (setf (text notifications) collection) ;; display visual counter
 				 (setf (checkedp (aref divs n)) nil)) ;; if checked, uncheck each checkbox array
-			  (progn (setf collection (concatenate 'string (print collection)   " " (write-to-string n) " ")) ;; zero out notifications
-				 (setf (text notifications) collection) ;; count the number of loops a click performs
+			  (progn (setf collection (concatenate 'string (print collection)   " " (write-to-string n) " ")) ;; update visual counter
+				 (setf (text notifications) collection) ;; display visual counter
 				 (setf (checkedp (aref divs n)) t)))))))) ;;otherwise, check each check box in array
 
 
