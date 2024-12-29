@@ -40,7 +40,7 @@
 				 (setf (checkedp (aref divs n)) nil)) ;; if checked, uncheck each checkbox array
 			  (progn (setf collection (concatenate 'string (print collection)   " " (write-to-string n) " ")) ;; zero out notifications
 				 (setf (text notifications) collection) ;; count the number of loops a click performs
-				 (setf (checkedp (aref divs n)) t)))))))) ;;others, check each check box in array
+				 (setf (checkedp (aref divs n)) t)))))))) ;;otherwise, check each check box in array
 
 
 
